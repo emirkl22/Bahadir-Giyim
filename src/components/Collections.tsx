@@ -3,25 +3,25 @@ import { motion } from "framer-motion";
 const COLLECTIONS = [
   {
     title: "Ceket & Takım Elbise",
-    weave: "weave-pinstripe",
+    image: "ceket-takim.jpg",
     desc: "Klasikten modern kesime; markanızın kalıbıyla veya kendi kalıplarımızla seri üretim.",
     detail: "Yün · Kaşmir · Süper 120's",
   },
   {
     title: "Pantolon",
-    weave: "weave-herringbone",
+    image: "pantolon.jpg",
     desc: "Klasik ve slim kalıplarda, istenen adet ve beden aralığında toptan üretim.",
     detail: "Yün · Gabardin · Keten",
   },
   {
     title: "Kaşe Mont & Kaban",
-    weave: "weave-oxford",
+    image: "kase-mont-kaban.jpg",
     desc: "Mevsimlik dış giyimde astar, dolgu ve dikim detaylarına özel fason imalat.",
     detail: "Kaşe · Yün Karışım",
   },
   {
     title: "Gömlek",
-    weave: "weave-pinstripe",
+    image: "gomlek.jpg",
     desc: "Yaka ve manşet detaylarına kadar özelleştirilebilen, toplu üretime uygun gömlekler.",
     detail: "Pamuk · Poplin · Oxford",
   },
@@ -53,9 +53,16 @@ export default function Collections() {
               transition={{ duration: 0.7, delay: i * 0.15 }}
               className="group relative overflow-hidden border border-[var(--color-gold)]/15 bg-[var(--color-coffee)] transition-colors duration-500 hover:border-[var(--color-gold)]/40"
             >
-              {/* fabric swatch header — CSS weave, no images */}
-              <div className={`${item.weave} relative h-48 bg-[var(--color-bark)] transition-transform duration-700 group-hover:scale-[1.03]`}>
-                <span className="absolute bottom-4 left-6 font-serif text-lg italic text-[var(--color-champagne)]/80">
+              {/* real campaign photography */}
+              <div className="relative h-64 overflow-hidden bg-[var(--color-bark)]">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/${item.image}`}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-espresso)] via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-6 font-serif text-lg italic text-[var(--color-champagne)]">
                   {item.detail}
                 </span>
               </div>

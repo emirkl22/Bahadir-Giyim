@@ -25,7 +25,7 @@ export default function Heritage() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="eyebrow mb-6">Hakkımızda</p>
+          <p className="eyebrow mb-6">Hakkımızda — 1976'dan Beri</p>
           <h2 className="font-serif text-4xl leading-tight font-medium md:text-5xl">
             Üretimde bile bir
             <span className="italic text-[var(--color-gold)]"> ayrıntı </span>
@@ -33,11 +33,18 @@ export default function Heritage() {
           </h2>
           <div className="rule-gold mt-10 w-24" style={{ marginLeft: 0, background: "linear-gradient(to right, var(--color-gold), transparent)" }} />
           <p className="mt-8 max-w-md text-base leading-relaxed text-[var(--color-espresso)]/70">
-            Bahadır Tekstil, erkek giyiminde toptan imalat ve fason dikim
-            hizmeti veren bir üretim tesisidir. Pantolon, ceket, takım elbise,
-            kaşe mont, kaban ve gömlekte markanızın kalitesini seri üretimde
-            de aynı titizlikle taşırız — çünkü kalite, ayrıntılarda gizlidir.
+            1976'dan bu yana erkek giyiminde biriktirdiğimiz tecrübeyi, bugün
+            toptan imalat ve fason dikimde markanızın hizmetine sunuyoruz.
+            Pantolon, ceket, takım elbise, kaşe mont, kaban ve gömlekte
+            kalitesinden ödün vermeyen bir üretim ortağı arıyorsanız, doğru
+            yerdesiniz — çünkü kalite, ayrıntılarda gizlidir.
           </p>
+          <img
+            src={`${import.meta.env.BASE_URL}images/hakkimizda.jpg`}
+            alt="Bahadır Tekstil üretimi"
+            className="mt-10 h-56 w-full max-w-md rounded-sm border border-[var(--color-espresso)]/10 object-cover object-top"
+            loading="lazy"
+          />
         </motion.div>
 
         <div className="flex flex-col justify-center divide-y divide-[var(--color-espresso)]/10">

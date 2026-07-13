@@ -4,7 +4,7 @@ import Logo from "./Logo";
 export type LegalDoc = "privacy" | "kvkk" | "cookies";
 
 const COMPANY = "Bahadır Tekstil";
-const ADDRESS = "İstanbul, Türkiye";
+const ADDRESS = "Kocavezir Mh. 32003 Sk. No:35/C, Seyhan/Adana";
 const EMAIL = "info@bahadirgiyim.com";
 
 const DOCS: { key: LegalDoc; hash: string; label: string }[] = [

@@ -19,13 +19,21 @@ export default function Footer() {
         <div className="mt-20 flex flex-col items-center gap-12">
           <Logo variant="footer" />
 
-          <div className="grid w-full gap-10 text-center sm:grid-cols-3">
+          <div className="grid w-full gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <h4 className="eyebrow mb-4">Adres</h4>
+              <h4 className="eyebrow mb-4">Merkez / Fabrika</h4>
               <p className="text-sm leading-relaxed text-[var(--color-stone)]">
-                İstanbul, Türkiye
+                Kocavezir Mh. 32003 Sk. No:35/C
                 <br />
-                Fabrika ziyareti için randevu alınız
+                Seyhan / Adana
+              </p>
+            </div>
+            <div>
+              <h4 className="eyebrow mb-4">Showroom İstanbul</h4>
+              <p className="text-sm leading-relaxed text-[var(--color-stone)]">
+                Samanyolu Sk. Zafer Han No:56/27
+                <br />
+                Osmanbey, Şişli / İstanbul
               </p>
             </div>
             <div>
@@ -33,7 +41,9 @@ export default function Footer() {
               <p className="text-sm leading-relaxed text-[var(--color-stone)]">
                 info@bahadirgiyim.com
                 <br />
-                +90 (212) 000 00 00
+                +90 (322) 359 04 77
+                <br />
+                GSM: +90 (532) 552 56 52
               </p>
             </div>
             <div>

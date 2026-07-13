@@ -72,7 +72,7 @@ export default function Hero() {
           className="absolute right-6 top-1/2 hidden -translate-y-1/2 text-[10px] uppercase tracking-[0.5em] text-[var(--color-gold)]/50 lg:block"
           style={{ writingMode: "vertical-rl" }}
         >
-          Bahadır Tekstil — İstanbul
+          Bahadır Tekstil — Adana · İstanbul
         </span>
 
         <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 px-6 md:grid-cols-[1.1fr_0.9fr]">
