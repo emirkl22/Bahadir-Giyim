@@ -55,7 +55,9 @@ export default function Hero() {
 
     const ctx = gsap.context(() => {
       // 1) suit draws itself on load — stroke by stroke, like chalk on fabric
-      const strokes = suitRef.current?.querySelectorAll<SVGGeometryElement>("[data-suit] path, [data-suit] circle");
+      const strokes = suitRef.current?.querySelectorAll<SVGGeometryElement>(
+        "[data-suit] path:not([data-suit-fill]), [data-suit] circle"
+      );
       if (strokes?.length) {
         strokes.forEach((el) => {
           const len = el.getTotalLength();
@@ -69,6 +71,12 @@ export default function Hero() {
           stagger: 0.08,
           delay: 0.3,
         });
+      }
+
+      // tonal fill fades in alongside the linework instead of popping in
+      const fill = suitRef.current?.querySelector<SVGPathElement>("[data-suit-fill]");
+      if (fill) {
+        gsap.fromTo(fill, { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "power1.out", delay: 0.4 });
       }
 
       gsap.fromTo(
