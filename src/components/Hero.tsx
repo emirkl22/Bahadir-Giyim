@@ -33,8 +33,8 @@ function BackgroundSlideshow() {
           src={`${import.meta.env.BASE_URL}images/${src}`}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out"
-          style={{ opacity: i === active ? 1 : 0 }}
+          className="hero-slide-zoom absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out"
+          style={{ opacity: i === active ? 1 : 0, animationDelay: `${i * -3.6}s` }}
         />
       ))}
       {/* slight darkening so foreground text/suit stay legible */}

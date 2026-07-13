@@ -18,6 +18,25 @@ html {
   background-color: var(--color-espresso);
 }
 
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.hero-slide-zoom {
+  animation: hero-zoom 18s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-zoom {
+    animation: none;
+  }
+}
+
 body {
   margin: 0;
   background-color: var(--color-espresso);
