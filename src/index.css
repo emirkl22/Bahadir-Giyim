@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  --color-espresso: #14100a;
+  --color-coffee: #1f1810;
+  --color-bark: #2b2117;
+  --color-gold: #c8a45d;
+  --color-champagne: #e8d9b5;
+  --color-ivory: #f5f0e7;
+  --color-stone: #8f8779;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-espresso);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  overflow-x: hidden;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-espresso);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-espresso);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c8a45daa, #c8a45d33);
+  border-radius: 999px;
+}
+
+@layer utilities {
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--color-gold);
+  }
+
+  .rule-gold {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: var(--color-gold);
+    color: var(--color-espresso);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.9rem 2.2rem;
+    transition: background-color 0.3s ease;
+  }
+  .btn-gold:hover {
+    background: var(--color-champagne);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1px solid color-mix(in srgb, var(--color-gold) 55%, transparent);
+    color: var(--color-champagne);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.9rem 2.2rem;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  .btn-outline:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  /* fabric weave textures — pure CSS, zero asset weight */
+  .weave-pinstripe {
+    background-image: repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-champagne) 14%, transparent) 0px,
+      color-mix(in srgb, var(--color-champagne) 14%, transparent) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+  }
+
+  .weave-oxford {
+    background-image:
+      repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-champagne) 10%, transparent) 0 1px, transparent 1px 4px),
+      repeating-linear-gradient(0deg, color-mix(in srgb, var(--color-champagne) 10%, transparent) 0 1px, transparent 1px 4px);
+  }
+
+  .weave-herringbone {
+    background-image:
+      repeating-linear-gradient(45deg, color-mix(in srgb, var(--color-champagne) 9%, transparent) 0 1px, transparent 1px 8px),
+      repeating-linear-gradient(-45deg, color-mix(in srgb, var(--color-champagne) 9%, transparent) 0 1px, transparent 1px 8px);
+  }
+
+  /* legal/prose pages */
+  .legal-body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--color-champagne);
+    margin: 2rem 0 0.6rem;
+  }
+  .legal-body p {
+    margin: 0 0 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--color-ivory) 75%, transparent);
+  }
+  .legal-body a {
+    color: var(--color-gold);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .legal-body strong {
+    color: var(--color-ivory);
+    font-weight: 500;
+  }
+}
