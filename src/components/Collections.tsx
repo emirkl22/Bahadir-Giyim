@@ -2,22 +2,28 @@ import { motion } from "framer-motion";
 
 const COLLECTIONS = [
   {
-    title: "Takım Elbise",
+    title: "Ceket & Takım Elbise",
     weave: "weave-pinstripe",
-    desc: "Klasikten modern kesime, düğünden iş hayatına — ölçünüze göre şekillenen takımlar.",
+    desc: "Klasikten modern kesime; markanızın kalıbıyla veya kendi kalıplarımızla seri üretim.",
     detail: "Yün · Kaşmir · Süper 120's",
   },
   {
-    title: "Gömlek",
-    weave: "weave-oxford",
-    desc: "Yaka duruşundan manşet detayına, teninize dokunan kumaşa kadar size özel gömlekler.",
-    detail: "Pamuk · Poplin · Oxford",
+    title: "Pantolon",
+    weave: "weave-herringbone",
+    desc: "Klasik ve slim kalıplarda, istenen adet ve beden aralığında toptan üretim.",
+    detail: "Yün · Gabardin · Keten",
   },
   {
-    title: "Kumaş & Aksesuar",
-    weave: "weave-herringbone",
-    desc: "Kravat, papyon, mendil ve mevsimine göre seçilmiş kumaşlarla bütünlenen stil.",
-    detail: "İpek · Yün · Keten",
+    title: "Kaşe Mont & Kaban",
+    weave: "weave-oxford",
+    desc: "Mevsimlik dış giyimde astar, dolgu ve dikim detaylarına özel fason imalat.",
+    detail: "Kaşe · Yün Karışım",
+  },
+  {
+    title: "Gömlek",
+    weave: "weave-pinstripe",
+    desc: "Yaka ve manşet detaylarına kadar özelleştirilebilen, toplu üretime uygun gömlekler.",
+    detail: "Pamuk · Poplin · Oxford",
   },
 ];
 
@@ -27,17 +33,17 @@ export default function Collections() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="eyebrow mb-6">Koleksiyon</p>
+            <p className="eyebrow mb-6">Üretim Kategorilerimiz</p>
             <h2 className="font-serif text-4xl leading-tight font-medium text-[var(--color-ivory)] md:text-5xl">
-              Dolabınızın <span className="italic text-[var(--color-gold)]">temel taşları</span>
+              Toptan üretimde <span className="italic text-[var(--color-gold)]">kapasitemiz</span>
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--color-stone)]">
-            Her parça, kumaşının dokusunu taşıyan bir hikâye ile gelir.
+            Her kategori, kendi kumaşı ve fason ihtiyacınıza göre şekillenir.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {COLLECTIONS.map((item, i) => (
             <motion.article
               key={item.title}

@@ -43,7 +43,7 @@ export default function Navbar() {
         </ul>
 
         <a href="#iletisim" className="btn-outline hidden sm:inline-block">
-          Randevu
+          Teklif Al
         </a>
       </nav>
     </header>

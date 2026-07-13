@@ -78,7 +78,7 @@ export default function Hero() {
         <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 px-6 md:grid-cols-[1.1fr_0.9fr]">
           {/* foreground — 1x — headline */}
           <div ref={fgRef} className="will-change-transform">
-            <p className="eyebrow mb-6">Özel Dikim — Takım Elbise &amp; Gömlek</p>
+            <p className="eyebrow mb-6">Toptan Üretim — İmalat &amp; Fason Dikim</p>
             <h1 className="font-serif text-5xl leading-[1.05] font-medium text-[var(--color-ivory)] md:text-7xl">
               Kalite,
               <br />
@@ -87,15 +87,16 @@ export default function Hero() {
               Gizlidir
             </h1>
             <p className="mt-8 max-w-md text-base leading-relaxed text-[var(--color-stone)]">
-              Her kumaş elle seçilir, her dikiş ustasının imzasını taşır.
-              Bahadır Tekstil'de takım elbise bir kıyafet değil, bir duruştur.
+              Pantolon, ceket, takım elbise, kaşe mont, kaban ve gömlekte
+              toptan imalat ve fason dikim. Markanızın üretim ortağı olarak
+              seri üretimde zanaat kalitesini korur.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a href="#koleksiyon" className="btn-gold">
-                Koleksiyon
+                Üretim Kapasitemiz
               </a>
-              <a href="#atolye" className="btn-outline">
-                Atölyeyi Tanıyın
+              <a href="#iletisim" className="btn-outline">
+                Teklif Alın
               </a>
             </div>
           </div>

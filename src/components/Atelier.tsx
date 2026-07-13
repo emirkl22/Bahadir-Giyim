@@ -2,20 +2,20 @@ import { motion } from "framer-motion";
 
 const STEPS = [
   {
-    title: "Ölçü & Danışmanlık",
-    desc: "İlk buluşmada ölçüleriniz alınır; duruşunuz, tarzınız ve ihtiyaçlarınız birlikte konuşulur.",
+    title: "Teklif & Numune",
+    desc: "Model, kumaş ve adet talebinizi alır; onayınız için numune parça hazırlarız.",
   },
   {
-    title: "Kumaş Seçimi",
-    desc: "Mevsime ve kullanım amacına göre kumaş, astar ve düğme seçenekleri önünüze serilir.",
+    title: "Kumaş & Model Onayı",
+    desc: "Numune onaylandıktan sonra kumaş tedariki ve üretim planlaması netleşir.",
   },
   {
-    title: "Prova",
-    desc: "İlk dikişin ardından prova yapılır; omuz, bel ve boy milimetrik olarak oturtulur.",
+    title: "Seri Üretim",
+    desc: "Kalite kontrolü her aşamada sürdürülerek, anlaşılan adet ve teslim takvimine göre üretim yapılır.",
   },
   {
-    title: "Teslim",
-    desc: "Son ütü ve kontrolün ardından parçanız, adınıza hazırlanmış olarak teslim edilir.",
+    title: "Sevkiyat",
+    desc: "Son kontrol ve paketlemenin ardından siparişiniz belirlenen adrese teslim edilir.",
   },
 ];
 
@@ -25,9 +25,9 @@ export default function Atelier() {
       <div className="pointer-events-none absolute inset-0 weave-oxford opacity-20" />
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-16 text-center">
-          <p className="eyebrow mb-6">Atölye</p>
+          <p className="eyebrow mb-6">Üretim Süreci</p>
           <h2 className="font-serif text-4xl leading-tight font-medium text-[var(--color-ivory)] md:text-5xl">
-            Randevudan teslimata <span className="italic text-[var(--color-gold)]">dört adım</span>
+            Teklifinizden sevkiyata <span className="italic text-[var(--color-gold)]">dört adım</span>
           </h2>
           <div className="rule-gold mx-auto mt-8 w-32" />
         </div>

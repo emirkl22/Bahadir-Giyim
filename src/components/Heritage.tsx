@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 
 const VALUES = [
   {
-    title: "El İşçiliği",
-    desc: "Kalıptan son ütüye kadar her aşama usta terzilerin elinden geçer; seri üretimin aceleciliğine yer yoktur.",
+    title: "Seri Üretim Kapasitesi",
+    desc: "Kalıptan son ütüye kadar her aşama deneyimli ekiplerin elinden geçer; büyük adetli siparişlerde de zanaat kalitesi korunur.",
   },
   {
-    title: "Kusursuz Uyum",
-    desc: "Ölçü, duruş ve yaşam tarzınız birlikte değerlendirilir; ceket omzunuza değil, karakterinize oturur.",
+    title: "Fason Esnekliği",
+    desc: "Markanızın kendi kalıbı, modeli ve kumaşıyla; ihtiyacınıza göre tam kapasite veya kısmi fason üretim modeli kurarız.",
   },
   {
     title: "Seçkin Kumaş",
-    desc: "Yün, kaşmir ve pamuk; dokusuna, tuşesine ve dökümüne göre tek tek elden geçirilerek seçilir.",
+    desc: "Yün, kaşmir ve pamuk; dokusuna, tuşesine ve dökümüne göre tedarikçilerimizle birlikte özenle seçilir.",
   },
 ];
 
@@ -27,16 +27,16 @@ export default function Heritage() {
         >
           <p className="eyebrow mb-6">Hakkımızda</p>
           <h2 className="font-serif text-4xl leading-tight font-medium md:text-5xl">
-            İyi giyinmek bir
+            Üretimde bile bir
             <span className="italic text-[var(--color-gold)]"> ayrıntı </span>
             meselesidir
           </h2>
           <div className="rule-gold mt-10 w-24" style={{ marginLeft: 0, background: "linear-gradient(to right, var(--color-gold), transparent)" }} />
           <p className="mt-8 max-w-md text-base leading-relaxed text-[var(--color-espresso)]/70">
-            Bahadır Tekstil, takım elbise ve gömlekte klasik terzilik geleneğini
-            bugünün zarafet anlayışıyla buluşturur. Vitrindeki değil,
-            üzerinizdeki mükemmelliği hedefleriz — çünkü kalite, ayrıntılarda
-            gizlidir.
+            Bahadır Tekstil, erkek giyiminde toptan imalat ve fason dikim
+            hizmeti veren bir üretim tesisidir. Pantolon, ceket, takım elbise,
+            kaşe mont, kaban ve gömlekte markanızın kalitesini seri üretimde
+            de aynı titizlikle taşırız — çünkü kalite, ayrıntılarda gizlidir.
           </p>
         </motion.div>
 

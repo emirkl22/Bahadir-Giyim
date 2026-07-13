@@ -6,12 +6,12 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         {/* CTA band */}
         <div className="border border-[var(--color-gold)]/20 px-8 py-14 text-center md:px-16">
-          <p className="eyebrow mb-4">Randevu</p>
+          <p className="eyebrow mb-4">İş Birliği</p>
           <h2 className="mx-auto max-w-2xl font-serif text-3xl leading-tight font-medium text-[var(--color-ivory)] md:text-5xl">
-            Gardırobunuzun bir sonraki parçasını birlikte dikelim
+            Markanızın üretim ortağı olalım
           </h2>
           <a href="mailto:info@bahadirgiyim.com" className="btn-gold mt-10">
-            Randevu Alın
+            Teklif Alın
           </a>
         </div>
 
@@ -25,7 +25,7 @@ export default function Footer() {
               <p className="text-sm leading-relaxed text-[var(--color-stone)]">
                 İstanbul, Türkiye
                 <br />
-                Randevu ile ziyaret
+                Fabrika ziyareti için randevu alınız
               </p>
             </div>
             <div>
