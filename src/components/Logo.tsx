@@ -4,7 +4,7 @@ type LogoProps = {
 
 /** Official Bahadır lockup (emblem + wordmark), vectorized from the brand's own artwork — do not redraw. */
 export default function Logo({ variant = "nav" }: LogoProps) {
-  const height = variant === "footer" ? 84 : 40;
+  const height = variant === "footer" ? 84 : 50;
 
   return (
     <a
