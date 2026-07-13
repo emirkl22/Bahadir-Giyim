@@ -19,21 +19,13 @@ export default function Footer() {
         <div className="mt-20 flex flex-col items-center gap-12">
           <Logo variant="footer" />
 
-          <div className="grid w-full gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid w-full gap-10 text-center sm:grid-cols-3">
             <div>
               <h4 className="eyebrow mb-4">Merkez / Fabrika</h4>
               <p className="text-sm leading-relaxed text-[var(--color-stone)]">
                 Kocavezir Mh. 32003 Sk. No:35/C
                 <br />
                 Seyhan / Adana
-              </p>
-            </div>
-            <div>
-              <h4 className="eyebrow mb-4">Showroom İstanbul</h4>
-              <p className="text-sm leading-relaxed text-[var(--color-stone)]">
-                Samanyolu Sk. Zafer Han No:56/27
-                <br />
-                Osmanbey, Şişli / İstanbul
               </p>
             </div>
             <div>
