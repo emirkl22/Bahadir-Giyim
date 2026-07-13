@@ -27,6 +27,19 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
+  // Closing the menu re-enables body scroll via the effect above, but that
+  // only flushes on the next render — the browser's native "jump to anchor"
+  // for the clicked link fires synchronously, while overflow is still
+  // hidden, so it silently fails to scroll. Restore scroll immediately and
+  // do the scroll ourselves once the menu has actually closed.
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    document.body.style.overflow = "";
+    setMenuOpen(false);
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    history.pushState(null, "", href);
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -95,7 +108,7 @@ export default function Navbar() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="block py-3 transition-colors duration-300 hover:text-[var(--color-gold)]"
                   >
                     {link.label}
@@ -105,7 +118,7 @@ export default function Navbar() {
               <li className="pt-3">
                 <a
                   href="#iletisim"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, "#iletisim")}
                   className="btn-gold inline-block"
                 >
                   Teklif Al
