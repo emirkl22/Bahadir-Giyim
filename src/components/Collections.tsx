@@ -66,8 +66,9 @@ export default function Collections() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ y: -6 }}
               transition={{ duration: 0.7, delay: i * 0.15 }}
-              className="group flex h-full flex-col overflow-hidden border border-[var(--color-gold)]/15 bg-[var(--color-coffee)] transition-colors duration-500 hover:border-[var(--color-gold)]/40"
+              className="group flex h-full flex-col overflow-hidden border border-[var(--color-gold)]/15 bg-[var(--color-coffee)] shadow-none transition-[border-color,box-shadow] duration-500 hover:border-[var(--color-gold)]/40 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
             >
               {/* real campaign photography */}
               <div className="relative h-64 shrink-0 overflow-hidden bg-[var(--color-bark)]">

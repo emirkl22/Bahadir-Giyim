@@ -4,6 +4,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SuitIllustration from "./SuitIllustration";
 
 gsap.registerPlugin(ScrollTrigger);
+// mobile browsers show/hide their address bar as the page settles, firing
+// resize events that would otherwise make ScrollTrigger recompute mid-scroll
+// and snap the hero into its "scrolled away" state without any real scrolling
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 const SLIDES = [
   "ceket-takim.jpg",
@@ -85,23 +89,30 @@ export default function Hero() {
         { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 0.2 }
       );
 
-      // 2) multi-layer parallax while scrolling past the pinned hero
-      const isSmall = window.matchMedia("(max-width: 768px)").matches;
-      if (isSmall) return;
-
-      const vh = window.innerHeight;
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
+      // 2) multi-layer parallax while scrolling past the pinned hero — only
+      // above the mobile breakpoint. Using matchMedia (rather than a
+      // one-time width check) means the trigger is properly created/torn
+      // down on orientation changes and never gets stuck mid-fade.
+      ScrollTrigger.matchMedia({
+        "(min-width: 769px)": () => {
+          const vh = window.innerHeight;
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+          tl.to(bgRef.current, { y: -vh * 0.5, ease: "none" }, 0);
+          tl.to(suitRef.current, { y: -vh * 0.8, rotate: -3, ease: "none" }, 0);
+          tl.to(fgRef.current, { y: -vh * 1, opacity: 0, ease: "none" }, 0);
         },
       });
-      tl.to(bgRef.current, { y: -vh * 0.5, ease: "none" }, 0);
-      tl.to(suitRef.current, { y: -vh * 0.8, rotate: -3, ease: "none" }, 0);
-      tl.to(fgRef.current, { y: -vh * 1, opacity: 0, ease: "none" }, 0);
     }, sectionRef);
+
+    const onFontsReady = () => ScrollTrigger.refresh();
+    document.fonts?.ready.then(onFontsReady);
 
     return () => ctx.revert();
   }, []);

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -5,7 +6,13 @@ export default function Footer() {
     <footer id="iletisim" className="relative bg-[var(--color-espresso)] px-6 pt-24 pb-10">
       <div className="mx-auto max-w-6xl">
         {/* CTA band */}
-        <div className="border border-[var(--color-gold)]/20 px-8 py-14 text-center md:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7 }}
+          className="border border-[var(--color-gold)]/20 px-8 py-14 text-center md:px-16"
+        >
           <p className="eyebrow mb-4">İş Birliği</p>
           <h2 className="mx-auto max-w-2xl font-serif text-3xl leading-tight font-medium text-[var(--color-ivory)] md:text-5xl">
             Markanızın üretim ortağı olalım
@@ -13,44 +20,67 @@ export default function Footer() {
           <a href="mailto:info@bahadirgiyim.com" className="btn-gold mt-10">
             Teklif Alın
           </a>
-        </div>
+        </motion.div>
 
         {/* logo + contact */}
-        <div className="mt-20 flex flex-col items-center gap-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-20 flex flex-col items-center gap-12"
+        >
           <Logo variant="footer" />
 
           <div className="grid w-full gap-10 text-center sm:grid-cols-3">
-            <div>
-              <h4 className="eyebrow mb-4">Merkez / Fabrika</h4>
-              <p className="text-sm leading-relaxed text-[var(--color-stone)]">
-                Kocavezir Mh. 32003 Sk. No:35/C
-                <br />
-                Seyhan / Adana
-              </p>
-            </div>
-            <div>
-              <h4 className="eyebrow mb-4">İletişim</h4>
-              <p className="text-sm leading-relaxed text-[var(--color-stone)]">
-                info@bahadirgiyim.com
-                <br />
-                +90 (322) 359 04 77
-                <br />
-                GSM: +90 (532) 552 56 52
-              </p>
-            </div>
-            <div>
-              <h4 className="eyebrow mb-4">Sosyal</h4>
-              <p className="text-sm leading-relaxed text-[var(--color-stone)]">
-                <a
-                  href="https://www.instagram.com/bahadirtextile/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-[var(--color-gold)]"
-                >
-                  Instagram — @bahadirtextile
-                </a>
-              </p>
-            </div>
+            {[
+              {
+                heading: "Merkez / Fabrika",
+                body: (
+                  <>
+                    Kocavezir Mh. 32003 Sk. No:35/C
+                    <br />
+                    Seyhan / Adana
+                  </>
+                ),
+              },
+              {
+                heading: "İletişim",
+                body: (
+                  <>
+                    info@bahadirgiyim.com
+                    <br />
+                    +90 (322) 359 04 77
+                    <br />
+                    GSM: +90 (532) 552 56 52
+                  </>
+                ),
+              },
+              {
+                heading: "Sosyal",
+                body: (
+                  <a
+                    href="https://www.instagram.com/bahadirtextile/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-[var(--color-gold)]"
+                  >
+                    Instagram — @bahadirtextile
+                  </a>
+                ),
+              },
+            ].map((col, i) => (
+              <motion.div
+                key={col.heading}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.1 * i }}
+              >
+                <h4 className="eyebrow mb-4">{col.heading}</h4>
+                <p className="text-sm leading-relaxed text-[var(--color-stone)]">{col.body}</p>
+              </motion.div>
+            ))}
           </div>
 
           <div className="rule-gold w-full" />
@@ -70,7 +100,7 @@ export default function Footer() {
           <p className="text-xs tracking-wide text-[var(--color-stone)]/70">
             © {new Date().getFullYear()} Bahadır Tekstil. Tüm hakları saklıdır.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
