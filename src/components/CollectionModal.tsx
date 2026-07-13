@@ -50,7 +50,7 @@ export default function CollectionModal({
             <button
               onClick={onClose}
               aria-label="Kapat"
-              className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-gold)]/30 text-[var(--color-gold)] transition-colors hover:border-[var(--color-gold)] hover:text-[var(--color-champagne)]"
+              className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-gold)]/30 text-[var(--color-gold)] transition-colors hover:border-[var(--color-gold)] hover:text-[var(--color-champagne)]"
             >
               ✕
             </button>

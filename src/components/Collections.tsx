@@ -92,7 +92,7 @@ export default function Collections() {
                 </p>
                 <button
                   onClick={() => setActive(item)}
-                  className="mt-auto self-start border border-[var(--color-gold)]/50 px-5 py-2.5 text-[10px] uppercase tracking-[0.3em] text-[var(--color-champagne)] transition-colors duration-300 hover:border-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-espresso)]"
+                  className="mt-auto min-h-11 self-start border border-[var(--color-gold)]/50 px-5 py-3 text-[10px] uppercase tracking-[0.3em] text-[var(--color-champagne)] transition-colors duration-300 hover:border-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-espresso)]"
                 >
                   İncele
                 </button>

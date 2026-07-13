@@ -70,6 +70,44 @@ body {
   border-radius: 999px;
 }
 
+/*
+ * btn-gold / btn-outline use @utility (not @layer utilities) so Tailwind
+ * slots them into its own cascade ordering — otherwise their unconditional
+ * `display` would sit later in the stylesheet than utilities like
+ * `hidden`/`sm:inline-block` and always win the tie, showing the button on
+ * every viewport regardless of the responsive class applied alongside it.
+ */
+@utility btn-gold {
+  display: inline-block;
+  background: var(--color-gold);
+  color: var(--color-espresso);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.9rem 2.2rem;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background: var(--color-champagne);
+  }
+}
+
+@utility btn-outline {
+  display: inline-block;
+  border: 1px solid color-mix(in srgb, var(--color-gold) 55%, transparent);
+  color: var(--color-champagne);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.9rem 2.2rem;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+}
+
 @layer utilities {
   .eyebrow {
     text-transform: uppercase;
@@ -82,37 +120,6 @@ body {
   .rule-gold {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--color-gold), transparent);
-  }
-
-  .btn-gold {
-    display: inline-block;
-    background: var(--color-gold);
-    color: var(--color-espresso);
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    padding: 0.9rem 2.2rem;
-    transition: background-color 0.3s ease;
-  }
-  .btn-gold:hover {
-    background: var(--color-champagne);
-  }
-
-  .btn-outline {
-    display: inline-block;
-    border: 1px solid color-mix(in srgb, var(--color-gold) 55%, transparent);
-    color: var(--color-champagne);
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    padding: 0.9rem 2.2rem;
-    transition: border-color 0.3s ease, color 0.3s ease;
-  }
-  .btn-outline:hover {
-    border-color: var(--color-gold);
-    color: var(--color-gold);
   }
 
   /* fabric weave textures — pure CSS, zero asset weight */
