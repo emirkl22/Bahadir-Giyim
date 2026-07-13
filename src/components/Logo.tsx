@@ -13,7 +13,7 @@ export default function Logo({ variant = "nav" }: LogoProps) {
       aria-label="Bahadır Tekstil — anasayfa"
     >
       <img
-        src="/brand/logo.svg"
+        src={`${import.meta.env.BASE_URL}brand/logo.svg`}
         alt="Bahadır — Kalite Ayrıntılarda Gizlidir"
         height={height}
         style={{ height, width: "auto" }}

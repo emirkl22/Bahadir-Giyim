@@ -32,9 +32,7 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
   return (
     <div className="min-h-screen bg-[var(--color-espresso)] text-[var(--color-ivory)]">
       <header className="flex items-center justify-between border-b border-[var(--color-gold)]/15 px-6 py-4">
-        <a href="#" onClick={goHome}>
-          <Logo />
-        </a>
+        <Logo />
         <a
           href="#"
           onClick={goHome}
